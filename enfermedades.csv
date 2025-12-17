@@ -1,0 +1,16 @@
+id,nombre,letalidad,urgencia
+1,Resfriado Comun,1,2
+2,Gripe Estacional,2,4
+3,Neumonia Bacteriana,7,8
+4,Sepsis,10,10
+5,Apendicitis Aguda,5,9
+6,Deshidratacion Severa,5,9
+7,Infarto Agudo Miocardio,9,10
+8,ACV,9,10
+9,Anafilaxia,8,10
+10,Asma Crisis,4,8
+11,Quemadura Grave,7,9
+12,Intoxicacion Farmacos,7,9
+13,Hipoglucemia Severa,6,9
+14,Meningitis,9,9
+15,Fractura Simple,2,6

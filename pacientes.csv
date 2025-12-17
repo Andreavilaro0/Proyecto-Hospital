@@ -1,0 +1,9 @@
+id,nombre,enfermedades_ids,historial
+1,Ana,1|2,
+2,Carlos,3|10,2:1;1:4
+3,Lucia,5|6,
+4,Mario,7|13,10:2
+5,Sofia,4|14,3:2;2:4
+6,Diego,9|11|12,1:4;15:4
+7,Elena,8|7,
+8,Jorge,15|2,

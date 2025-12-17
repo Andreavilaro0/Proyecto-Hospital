@@ -1,0 +1,31 @@
+id,nombre,tipo,cantidad
+1,Paracetamol 500mg,Analgésico,12
+2,Ibuprofeno 600mg,Antiinflamatorio,4
+3,Amoxicilina 500mg,Antibiótico,18
+4,Azitromicina 500mg,Antibiótico,2
+5,Omeprazol 20mg,Gastroprotector,33
+6,Metformina 850mg,Antidiabético,9
+7,Losartan 50mg,Antihipertensivo,27
+8,Amlodipino 5mg,Antihipertensivo,6
+9,Atorvastatina 20mg,Hipolipemiante,14
+10,Salbutamol inhalador,Broncodilatador,3
+11,Loratadina 10mg,Antihistamínico,21
+12,Cetirizina 10mg,Antihistamínico,0
+13,Prednisona 5mg,Corticoide,7
+14,Dexametasona 4mg,Corticoide,1
+15,Enoxaparina 40mg,Anticoagulante,8
+16,Aspirina 100mg,Antiagregante,26
+17,Tramadol 50mg,Analgésico,5
+18,Morfina 10mg/mL,Analgésico,11
+19,Ondansetrón 4mg,Antiemético,2
+20,Suero fisiológico 0.9%,Fluidoterapia,45
+21,Ringer lactato,Fluidoterapia,10
+22,Insulina regular,Antidiabético,4
+23,Heparina 5000 UI/mL,Anticoagulante,9
+24,Ceftriaxona 1g,Antibiótico,6
+25,Clindamicina 300mg,Antibiótico,13
+26,Diclofenaco 50mg,Antiinflamatorio,19
+27,Ketorolaco 30mg,Antiinflamatorio,0
+28,Sertralina 50mg,Antidepresivo,16
+29,Diazepam 5mg,Ansiolítico,2
+30,Clorhexidina 2%,Antiséptico,38
