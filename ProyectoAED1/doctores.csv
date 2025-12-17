@@ -1,0 +1,6 @@
+id,nombre,dinero,pendientes_ids
+1,Dra_Ramos,120,4|5|6
+2,Dr_Santos,80,3|10
+3,Dra_Vega,200,7|8
+4,Dr_Molina,60,1|2|15
+5,Dra_Cruz,150,9|11|12

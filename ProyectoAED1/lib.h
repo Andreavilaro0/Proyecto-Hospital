@@ -14,10 +14,40 @@ namespace Hospitalnames {
 		int cantidad;
 
 	public:
+
 		Medicamento() {};
 		//TODO: full constructor
+		Medicamento(int _id, std::string _nombre, std::string _tipo, int _cantidad ){
+			id = _id;
+			nombre = _nombre;
+			tipo = _tipo;
+			cantidad = _cantidad;
+		}
 
 		//TODO: getters and setters
+
+		int getId(){
+			return id;
+		}
+		std::string getNombre(){
+			return nombre;
+		}
+		std::string getTipo(){
+			return tipo;
+		}
+		int getCantidad(){
+			return cantidad;
+		}
+
+		void setId(int _id){
+			id = _id;
+		}
+		void setNombre(std::string _nombre){
+			nombre = _nombre;
+		}
+		void setTipo(int _tipo){
+			tipo =  _tipo;
+		}
 	};
 
 	class Enfermedad {
@@ -26,9 +56,44 @@ namespace Hospitalnames {
 		std::string nombre;
 		int letalidad;
 		int urgencia;
+
+	public:
 		//TODO: full constructor
+		Enfermedad(int _id, std::string _nombre, int _letalidad ,int _urgencia){
+			id = _id;
+			nombre = _nombre;
+			letalidad = _letalidad;
+			urgencia = _urgencia;
+		}
 
 		//TODO: getters and setters
+
+		int getId(){
+			return id;
+		}
+		std::string getNombre(){
+			return nombre;
+		}
+		int getLetalidad(){
+			return letalidad;
+		}
+		int getUrgencia(){
+			return urgencia;
+		}
+
+		void setId(int _id){
+			id = _id;
+		}
+		void setNombre(std::string _nombre){
+			nombre = _nombre;
+		}
+		void setLetalidad(int _letalidad){
+			letalidad = _letalidad;			
+		}
+		void setUrgencia(int _urgencia){
+			urgencia = _urgencia;
+		}
+
 
 		//returns letalidad * urgencia (y tal vez algo mas)
 		int prioridad();
@@ -43,6 +108,7 @@ namespace Hospitalnames {
 		std::list<Enfermedad>* pendientes;
 
 	public:
+
 		Doctor() { pendientes = new std::list<Enfermedad>(); };
 		 ~Doctor() { delete pendientes; }
 		//TODO: full constructor
@@ -207,6 +273,15 @@ namespace Hospitalnames {
 		//effectively returning how much units of each Medicamento to buy to replenish the stock
 		//Puntos: 1.5
 		std::list<Medicamento> reponerStock_k(int k);
+		
+
+
+
+
+
+	
+
+
 
 		//returns a new list of Medicamento in which for all Medicamento cantidad = nivelesAdecuados[i].cantidad - almacen[j].cantidad
 		//where i and j are the indexes that correspond to a certain Medicamento, e.g. "Paracetamol"
