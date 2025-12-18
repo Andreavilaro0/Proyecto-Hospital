@@ -55,12 +55,11 @@ std::vector<Hospitalnames::Enfermedad> cargarEnfermedades() {
 
     std::string linea;
     
-    // Saltar la línea de encabezados
+   
     std::getline(archivo, linea);
 
     while (std::getline(archivo, linea)) {
-        if (linea.empty()) continue; // Saltar líneas vacías
-        
+        if (linea.empty()) continue; 
         std::stringstream ss(linea);
         std::string dato;
         
@@ -87,7 +86,7 @@ std::vector<Hospitalnames::Enfermedad> cargarEnfermedades() {
     return enfermedades;
 }
 
-// Función auxiliar para buscar una enfermedad por ID
+// para buscar una enfermedad por ID
 Hospitalnames::Enfermedad* buscarEnfermedadPorId(std::vector<Hospitalnames::Enfermedad>& enfermedades, int id) {
     for (size_t i = 0; i < enfermedades.size(); i++) {
         if (enfermedades[i].getId() == id) {
@@ -111,13 +110,13 @@ void cargarPacientes(Hospitalnames::Hospital* hospital) {
 
     std::string linea;
     
-    // Saltar la línea de encabezados
+    
     std::getline(archivo, linea);
 
     int pacientesCargados = 0;
 
     while (std::getline(archivo, linea)) {
-        if (linea.empty()) continue; // Saltar líneas vacías
+        if (linea.empty()) continue; 
         
         std::stringstream ss(linea);
         std::string dato;
@@ -125,15 +124,14 @@ void cargarPacientes(Hospitalnames::Hospital* hospital) {
         int id;
         std::string nombre;
         int enf1, enf2, enf3;
-        
-        // Leer id
+   
         std::getline(ss, dato, ',');
         id = std::stoi(dato);
         
-        // Leer nombre
+       
         std::getline(ss, nombre, ',');
         
-        // Leer IDs de enfermedades
+    
         std::getline(ss, dato, ',');
         enf1 = std::stoi(dato);
         
@@ -143,10 +141,8 @@ void cargarPacientes(Hospitalnames::Hospital* hospital) {
         std::getline(ss, dato, ',');
         enf3 = std::stoi(dato);
 
-        // Crear paciente con lista de enfermedades
         std::list<Hospitalnames::Enfermedad>* enfermedadesPaciente = new std::list<Hospitalnames::Enfermedad>();
-        
-        // Añadir enfermedades si el ID no es 0
+
         if (enf1 != 0) {
             Hospitalnames::Enfermedad* enf = buscarEnfermedadPorId(enfermedades, enf1);
             if (enf != nullptr) {
@@ -167,8 +163,8 @@ void cargarPacientes(Hospitalnames::Hospital* hospital) {
         }
 
         // Crear historial vacío
-        std::stack<std::pair<Hospitalnames::Enfermedad, Hospitalnames::Doctor>>* historial = 
-            new std::stack<std::pair<Hospitalnames::Enfermedad, Hospitalnames::Doctor>>();
+        std::stack<std::pair<Hospitalnames::Enfermedad, Hospitalnames::Doctor> >* historial = 
+            new std::stack<std::pair<Hospitalnames::Enfermedad, Hospitalnames::Doctor> >();
 
         // Crear paciente
         Hospitalnames::Paciente p(id, nombre, enfermedadesPaciente, historial);

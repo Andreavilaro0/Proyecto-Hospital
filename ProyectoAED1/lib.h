@@ -110,7 +110,8 @@ namespace Hospitalnames {
 	public:
 
 		Doctor() { pendientes = new std::list<Enfermedad>(); };
-		 ~Doctor() { delete pendientes; }
+		~Doctor() { delete pendientes; }
+
 		//TODO: full constructor
       Doctor(int _id, std::string _nombre,int _dinero,std::list<Enfermedad>* _pendientes){
 		id = _id;
@@ -157,6 +158,7 @@ namespace Hospitalnames {
 		std::list<Enfermedad>* enfermedades;
 		std::stack<std::pair<Enfermedad, Doctor> >* historial;
 
+
 	public:
 		Paciente() { 
 			enfermedades = new std::list<Enfermedad>();
@@ -166,6 +168,7 @@ namespace Hospitalnames {
 			delete enfermedades;
 			delete historial;
 		}
+
 		//TODO: full constructor
 	  Paciente(int _id, std::string _nombre, std::list<Enfermedad>* _enfermedades, std::stack<std::pair<Enfermedad, Doctor> >* _historial){
 		id = _id;
@@ -210,7 +213,7 @@ namespace Hospitalnames {
 	
 
 		//returns the max priority among the patient's illnesses
-		int prioridadPaciente();
+		int prioridadPaciente() const;
 
 		//removes the highest priority Enfermedad from enfermedades and stores the pair Enfermedad, Doctor in historial, the most recent on top
 		//returns the highest priority Enfermedad
@@ -218,6 +221,11 @@ namespace Hospitalnames {
 
 		//ser� invocado cuando un Paciente se haya tratado todas sus Enfermedades
 		void darAlta(Doctor d);
+		
+		// Operador < para priority_queue (mayor prioridad = más urgente)
+		bool operator<(const Paciente& other) const {
+			return this->prioridadPaciente() < ((Paciente&)other).prioridadPaciente();
+		}
 	};
 
 	class Hospital {
