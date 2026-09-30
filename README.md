@@ -1,148 +1,50 @@
-# Proyecto Hospital - AED1
+# Hospital management — data structures practice (C++)
 
-Sistema de gestión hospitalaria desarrollado en C++ como proyecto para la asignatura de Algoritmos y Estructuras de Datos 1.
+**English** · [Español](README.es.md)
 
-## 📋 Descripción
+> **Status: incomplete.** The main logic is written in `lib.cpp`, but `main()` does not use it yet
+> (it only prints a message), and the tests are still the two example tests from the course
+> template.
 
-Este proyecto implementa un sistema de gestión para un hospital, incluyendo:
+A hospital management system in C++, written for the **Algorithms and Data Structures 1** course
+at UDIT (Madrid), December 2025. The goal of the assignment is to practise **linear data
+structures**: lists, queues, priority queues and stacks, plus recursion.
 
-- Gestión de pacientes con prioridades de urgencia
-- Gestión de doctores y cola de atención
-- Control de enfermedades y su tratamiento
-- Sistema de medicamentos y almacén
-- Historial de tratamientos
+## What is implemented
 
-## 🛠️ Requisitos
+The classes and operations in `ProyectoAED1/lib.h` and `lib.cpp`:
 
-- **CMake** >= 3.14
-- **Compilador C++** compatible con C++11 o superior (g++, clang++, MSVC)
-- **Git** para clonar el repositorio
+- **`Hospital`** — manages doctors, patients and the medicine store.
+- **`Paciente`** (patient) — with diseases, an urgency priority and a treatment history.
+- **`Doctor`** — with a queue of pending cases.
+- **`Enfermedad`** (disease) — with lethality and urgency levels.
+- **`Medicamento`** (medicine) — stock control and restocking.
+- Patient treatment by priority, and a recursive billing calculation.
+- Sample data in CSV files (`doctores.csv`, `enfermedades.csv`, `medicamentos.csv`, `pacientes.csv`).
 
-## 📦 Instalación
+## What is missing
 
-### 1. Clonar el repositorio
+- A menu in `main()` that connects the logic and the CSV loading.
+- Real unit tests for each operation (the project is already set up for Google Test).
+- Some cleanup from the course template (`TODO` comments, and a `.cpp` file included with
+  `#include`).
 
-```bash
-git clone https://github.com/Andreavilaro0/Proyecto-Hospital.git
-cd Proyecto-Hospital
-```
+## Build
 
-### 2. Compilar el proyecto
+You need CMake 3.14+ and a C++11 (or newer) compiler. CMake downloads Google Test automatically.
 
 ```bash
 cd ProyectoAED1
-mkdir build
-cd build
+mkdir build && cd build
 cmake ..
 make
-```
-
-> **Nota:** CMake descargará automáticamente Google Test para los tests unitarios.
-
-## 🚀 Ejecución
-
-### Ejecutar el programa principal
-
-```bash
 ./ProyectoAED1
 ```
 
-### Ejecutar los tests
+## Author
 
-```bash
-# Ejecutar tests directamente
-./ProyectoAED1_test
+Andrea Ávila — [@Andreavilaro0](https://github.com/Andreavilaro0)
 
-# O usando CTest
-ctest --verbose
-```
+## License
 
-## 📁 Estructura del Proyecto
-
-```
-Proyecto-Hospital/
-├── CMakeLists.txt              # Configuración CMake raíz
-├── CMakePresets.json           # Presets de CMake
-├── ProyectoAED1/
-│   ├── CMakeLists.txt          # Configuración CMake del proyecto
-│   ├── ProyectoAED1.cpp        # Archivo principal
-│   ├── ProyectoAED1.h          # Header principal
-│   ├── ProyectoAED1_test.cpp   # Tests unitarios
-│   ├── lib.h                   # Biblioteca con las clases del sistema
-│   └── lib.cpp                 # Implementación de la biblioteca
-└── README.md                   # Este archivo
-```
-
-## 🏥 Clases Principales
-
-- **`Hospital`**: Clase principal que gestiona doctores, pacientes y medicamentos
-- **`Paciente`**: Representa un paciente con sus enfermedades e historial
-- **`Doctor`**: Representa un doctor con su cola de enfermedades pendientes
-- **`Enfermedad`**: Define una enfermedad con su letalidad y urgencia
-- **`Medicamento`**: Gestiona el inventario de medicamentos
-
-## 🧪 Tests
-
-El proyecto incluye tests unitarios usando Google Test. Actualmente implementa:
-
-- `test1`: Test básico de verificación
-- `test2`: Test de ejemplo (falla intencionalmente)
-
-Para agregar más tests, edita `ProyectoAED1_test.cpp`.
-
-## 🔧 Compilación en diferentes plataformas
-
-### Linux/macOS
-
-```bash
-cd ProyectoAED1/build
-cmake .. && make
-```
-
-### Windows (Visual Studio)
-
-```bash
-cd ProyectoAED1
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release
-```
-
-## 👥 Autores
-
-- Andrea Ávila - [@Andreavilaro0](https://github.com/Andreavilaro0)
-
-## 📝 Notas
-
-- El directorio `build/` está excluido del control de versiones
-- Google Test se descarga automáticamente durante la compilación
-- Para recompilar desde cero: `rm -rf build && mkdir build && cd build && cmake .. && make`
-
-## 🐛 Solución de Problemas
-
-### Error: "No such file or directory"
-
-Asegúrate de estar en el directorio correcto antes de compilar:
-
-```bash
-cd ProyectoAED1
-mkdir -p build
-cd build
-```
-
-### Error de CMake
-
-Si CMake no encuentra el compilador, especifica uno manualmente:
-
-```bash
-cmake -DCMAKE_CXX_COMPILER=g++ ..
-```
-
-### Problemas con Google Test
-
-Si hay problemas descargando Google Test, verifica tu conexión a internet y vuelve a intentar.
-
-## 📄 Licencia
-
-Proyecto académico - Universidad
+Academic project.
